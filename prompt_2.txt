@@ -1,0 +1,95 @@
+¡Hola! Soy un estudiante de tercer año de Ingeniería en Informática en la Universidad de Mendoza, cursando la asignatura Computación II. Necesito una guía paso a paso para estudiar y comprender el uso de getopt y argparse en Python, con énfasis en familiarizarme con la terminal. A continuación, te proporciono los detalles para que me guíes de manera efectiva:
+
+1. Objetivos de Aprendizaje
+Al finalizar esta sesión, debería ser capaz de:
+
+Entender la importancia de manejar argumentos de línea de comandos en scripts de Python.
+
+Utilizar getopt para parsear argumentos simples.
+
+Implementar argparse para manejar argumentos de manera más robusta y flexible.
+
+Crear un script funcional que acepte y procese argumentos desde la terminal.
+
+2. Reglas de Interacción
+Guíame paso a paso: Comienza con una explicación teórica clara y luego avanza a la parte práctica.
+
+Explicación teórica primero: Antes de mostrar código, explícame los conceptos clave y su importancia.
+
+Preguntas de comprensión: Al final de cada sección importante, formula 2-3 preguntas para verificar mi comprensión.
+
+Momentos de pausa: Indícame cuándo hacer una pausa para compartir mis avances con el profesor o la clase.
+
+Enfoque en el tema actual: Si pregunto sobre temas futuros, respóndeme brevemente pero recuérdame enfocarme en getopt y argparse.
+
+3. Estructura de la Sesión
+Sigue esta estructura para guiarme:
+
+Activación de conocimientos previos:
+
+Pregúntame: ¿Qué sabes sobre los argumentos de línea de comandos? ¿Has usado alguna vez la terminal para ejecutar scripts?
+
+Relaciona este tema con conceptos previos, como la ejecución de programas y la interacción con el sistema operativo.
+
+Explicación teórica:
+
+Explícame qué son getopt y argparse, sus diferencias y cuándo usar cada uno.
+
+Describe la importancia de manejar argumentos en scripts de Python.
+
+Demostración práctica:
+
+Muéstrame un ejemplo básico de cómo usar getopt para manejar argumentos.
+
+Luego, muéstrame un ejemplo más avanzado usando argparse.
+
+Asegúrate de que el código esté bien comentado y sea fácil de seguir.
+
+Desafío práctico:
+
+Propón un ejercicio donde deba crear un script que use argparse para aceptar un nombre de archivo de entrada y uno de salida.
+
+Guíame con sugerencias, pero no me des la solución completa de inmediato.
+
+Punto de control:
+
+Formula 2-3 preguntas de comprensión, como:
+
+¿Cuál es la diferencia entre getopt y argparse?
+
+¿Cómo harías que un argumento sea obligatorio en argparse?
+
+¿Qué ventajas tiene argparse sobre getopt?
+
+Extensión/Profundización:
+
+Explícame cómo manejar tipos de datos específicos (como números o listas) con argparse.
+
+Menciona brevemente temas futuros, como la integración de estos conceptos con programación concurrente o el uso de APIs.
+
+Síntesis y cierre:
+
+Resume los conceptos clave que aprendí en esta sesión.
+
+Proporcióname recursos adicionales, como la documentación oficial de argparse o tutoriales recomendados.
+
+4. Instrucciones Específicas
+Ajusta el ritmo: Si no entiendo algo, repite la explicación o proporcióname ejemplos adicionales.
+
+Recuérdame compartir avances: Durante los momentos de pausa, indícame que comparta mis avances con el profesor.
+
+Asegura los fundamentos: Si avanzo demasiado rápido, detén la sesión y asegúrate de que he comprendido los conceptos básicos.
+
+5. Recordatorios Importantes
+No resuelvas todo por mí: Guíame para que yo mismo resuelva los ejercicios, pero corrígeme si cometo errores.
+
+Atención a detalles críticos: Asegúrate de que entienda cómo estructurar un script con argparse y cómo ejecutarlo desde la terminal.
+
+Recursos adicionales: Al final, recomiéndame lecturas o tutoriales para profundizar en el tema.
+
+6. Temas Futuros
+Fuera del alcance actual: Temas como programación concurrente, APIs de Sockets o Docker no serán tratados ahora, pero los veremos más adelante.
+
+Enfoque actual: Si pregunto sobre estos temas, respóndeme brevemente pero recuérdame centrarme en getopt y argparse.
+
+¡Gracias por tu ayuda! Estoy listo para comenzar. Por favor, guíame a través de la activación de conocimientos previos para

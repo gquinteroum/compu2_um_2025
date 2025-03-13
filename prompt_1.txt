@@ -1,0 +1,56 @@
+Soy estudiante de Ingeniería Informática en la asignatura Computación II. Estoy comenzando la primera clase y necesito tu ayuda para aprender sobre control de versiones con Git y conceptos básicos de entrada/salida en sistemas Unix/Linux.
+
+Por favor, guíame paso a paso a través de las siguientes actividades, deteniéndote después de cada sección para asegurarte de que he comprendido los conceptos antes de avanzar. **Si en algún momento me desvío con preguntas no relacionadas, puedes responderlas brevemente, pero recuérdame que debemos volver a los objetivos de la clase para completar todas las actividades en el tiempo disponible.**
+
+**Mi objetivo principal es terminar esta clase habiendo configurado correctamente mi repositorio Git con la estructura requerida y comprendiendo los conceptos fundamentales, así que ayúdame a mantenerme enfocado en eso.**
+
+1. **Configuración de Git**: 
+   Primero proporciona una explicación teórica sobre qué es Git, su importancia en el desarrollo de software moderno, el concepto de control de versiones distribuido y cómo difiere de sistemas anteriores. Explica qué problemas resuelve Git y por qué es una habilidad esencial para un ingeniero de software hoy en día.
+   
+   Luego guíame a través de la instalación y configuración básica. Incluye cómo verificar si ya está instalado y cómo configurar mi identidad.
+
+2. **Creación de mi primer repositorio**:
+   Explícame el concepto de un repositorio Git, la diferencia entre repositorios locales y remotos, y cómo Git rastrea los cambios en un proyecto. Detalla la idea del directorio .git y su importancia.
+   
+   Después indícame los comandos para crear un directorio para el curso, inicializar un repositorio Git y verificar su estado. Explica claramente qué hace cada comando y qué significan los mensajes que muestra.
+
+3. **Estructura del repositorio del curso**:
+   Explícame la importancia de mantener una estructura organizada en proyectos de software, los beneficios de la documentación apropiada y cómo esto facilita la colaboración en equipos de desarrollo.
+   
+   Luego ayúdame a crear la siguiente estructura de directorios en mi repositorio:
+   ```
+   README.md
+   /TP_1
+   /TP_2
+   /Clases
+       /Clase_1
+           /Apuntes
+           /Ejercicios
+           /Resumen_pedagógico
+       ...
+   /TRABAJO_FINAL
+   ```
+   Además, debo crear un README.md que incluya mi información personal, expectativas sobre la materia, intereses relacionados con la programación y mis hobbies. **Esta parte es especialmente importante, así que si nos estamos quedando sin tiempo, asegúrate de que al menos complete esta estructura correctamente.**
+
+4. **Primer commit y flujo de trabajo Git**:
+   Explícame el concepto fundamental del modelo de trabajo en Git: el área de trabajo, el área de preparación (staging) y el repositorio. Describe el ciclo de vida de los archivos en Git y cómo los cambios pasan por diferentes estados.
+   
+   A continuación, enséñame cómo añadir archivos al área de staging, realizar mi primer commit y visualizar el historial de cambios. Explica los conceptos de staging area, commit y el propósito de los mensajes de commit.
+
+5. **Conexión con repositorio remoto**:
+   Introduce los conceptos de trabajo distribuido, la importancia de tener copias de seguridad en servidores remotos y cómo Git facilita la colaboración entre desarrolladores que pueden estar geográficamente distantes.
+   
+   Luego guíame paso a paso para conectar mi repositorio local con uno remoto (en GitHub o GitLab) y subir mis cambios. Explica qué es un repositorio remoto y por qué es útil.
+
+6. **Conceptos básicos de terminal Unix**:
+   Proporciona una introducción teórica al modelo de E/S de Unix, explicando cómo este enfoque ha influido en el diseño de sistemas operativos modernos y por qué es poderoso para la composición de programas y automatización.
+   
+   Después explícame qué es la entrada/salida estándar (stdin, stdout, stderr), cómo funciona la redirección con los operadores `>`, `>>`, `<`, y `2>`, qué son los pipes (`|`), qué son los descriptores de archivos en Linux y para qué sirven archivos especiales como `/dev/null`.
+
+Por cada sección, después de explicar los conceptos, proporciona ejercicios prácticos sencillos para que pueda aplicar lo aprendido, y **formula 2-3 preguntas que me ayuden a verificar mi comprensión. Estas preguntas debes hacerlas cuando me indiques hacer un alto para la puesta en común con el resto de la clase.**
+
+**Si te hago preguntas sobre getopt y argparse, puedes responderlas brevemente pero indícame que esos temas serán cubiertos en detalle en la próxima clase, y que ahora debemos enfocarnos en completar los temas de hoy.**
+
+**Si notas que estoy avanzando demasiado rápido y saltando conceptos importantes, recuérdame que es mejor asegurar una comprensión sólida de los fundamentos antes de avanzar.**
+
+**Al final de cada sección importante, recuérdame que debo compartir mis avances con el profesor y compañeros para asegurarme de que estoy en el camino correcto.**
