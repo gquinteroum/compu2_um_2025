@@ -1,0 +1,39 @@
+1. Identificación y contexto
+Hola, soy estudiante de un curso avanzado de Python. Necesito una guía paso a paso para entender profundamente cómo funciona la memoria en Python y cómo se manipulan los objetos en este lenguaje.
+
+2. Objetivos de aprendizaje
+Objetivo Principal: Al finalizar esta sesión, quiero ser capaz de explicar y aplicar los mecanismos de administración de memoria en Python (stack, heap, conteo de referencias, garbage collector) y cómo se comportan los objetos mutables e inmutables en diferentes contextos.
+Configuración: Estoy trabajando en un entorno local con Python 3.x instalado (no se requiere nada adicional más allá de las librerías estándar, aunque si se requiere el uso de ctypes, lo tengo disponible).
+Entregable: Al final de la sesión, planeo tener un set de ejercicios resueltos y ejemplos propios implementados en Python, que muestren mi comprensión de cómo se crean, modifican y liberan los objetos en memoria.
+3. Reglas de interacción con la IA
+Guía paso a paso: Por favor, condúceme cuidadosamente por cada tema, primero con una explicación teórica conceptual y luego una parte práctica.
+Regreso al tema principal: Si en algún momento formulo preguntas que me desvíen del objetivo principal, ayúdame a retomar el hilo central y enfocar la sesión en la memoria y la manipulación de objetos en Python.
+Pausas de puesta en común: Al final de cada sección importante, por favor indica expresamente que hagamos una pausa para la puesta en común con la clase.
+Preguntas de comprensión: En esas pausas, formula 2 o 3 preguntas de verificación de comprensión. (Te pido que no las hagas antes ni después de ese momento de pausa).
+Recordatorio al profesor: En esas mismas pausas, recuérdame compartir mis avances con el profesor.
+4. Estructura para los temas a desarrollar
+Tema General: “Comprensión Profunda de la Memoria y la Manipulación de Objetos en Python”
+Para cada subtema que te solicite, por favor:
+
+Explicación Teórica: Explica por qué es relevante y cuál es su importancia en Python.
+Instrucciones Paso a Paso: Proporciona pasos concretos para experimentar o ejercitar el concepto.
+Ejemplos Concretos: Incluye ejemplos de código o situaciones prácticas que ilustren cómo se utilizan los conceptos.
+Ejercicios Prácticos: Plantea ejercicios para que los realice y consolide mi aprendizaje, incluyendo sus posibles soluciones (o pistas) si fuera necesario.
+Los subtemas específicos que deseo abordar son:
+
+Historia y Evolución de la Gestión de Memoria en Python
+Stack y Heap en Python
+Identificación de Objetos en Memoria con id()
+Mutabilidad e Inmutabilidad
+Paso de Argumentos y Referencias en Funciones
+Manipulación Avanzada de Memoria con ctypes
+Ejercicios Progresivos que incluyan ejemplos y buenas prácticas
+5. Instrucciones para temas futuros
+Hay temas relacionados (por ejemplo, optimizaciones de memoria con estructuras específicas, integraciones con C/C++, etc.) que no deseo tratar en esta sesión. Si llego a preguntar algo sobre ellos, por favor:
+
+Bríndame una respuesta breve y general,
+Pero recuérdame que debemos centrarnos en lo actual: la memoria y la manipulación de objetos en Python.
+6. Recordatorios importantes
+Si notas que avanzo demasiado rápido y no comprendo los fundamentos, por favor alértame para que repase conceptos.
+Si hay partes críticas (por ejemplo, ejercicios de creación y destrucción de objetos o la estructura de directorios para proyectos Python) que debería completar sí o sí, insiste en que las termine, incluso si el tiempo es limitado.
+Te agradeceré que destaques cualquier detalle crucial que no deba pasar por alto antes de dar por finalizada la sesión.
