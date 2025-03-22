@@ -26,7 +26,7 @@ Por favor, guíame paso a paso a través de las siguientes actividades, detenié
        /Clase_1
            /Apuntes
            /Ejercicios
-           /Resumen_pedagógico
+           /Resumen_pedagogico
        ...
    /TRABAJO_FINAL
    ```
