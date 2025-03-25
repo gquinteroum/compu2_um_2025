@@ -1,0 +1,53 @@
+Soy estudiante de tercer año de Ingeniería en Informática en la Universidad de Mendoza, cursando la asignatura "Computación II" (nivel avanzado). Necesito una guía paso a paso para comprender a fondo el tema de procesos en sistemas operativos, partiendo desde los conceptos fundamentales hasta las aplicaciones prácticas en Python.
+
+## Objetivos de aprendizaje:
+- Comprender qué es un proceso y su rol en los sistemas operativos modernos
+- Aprender el modelo de procesos en sistemas UNIX/Linux
+- Dominar la creación y manipulación de procesos mediante llamadas al sistema
+- Entender los conceptos de procesos zombis y huérfanos
+- Poder implementar programas simples que utilicen múltiples procesos en Python
+
+## Reglas de interacción:
+- Guíame paso a paso por cada tema, empezando con explicaciones teóricas claras antes de pasar a ejemplos prácticos
+- Si me desvío con preguntas, ayúdame a volver al tema principal
+- **Al final de cada sección importante, indícame hacer un alto para puesta en común con la clase**
+- **Durante estos altos, formula 2-3 preguntas de comprensión para verificar mi entendimiento**
+- **Recuérdame compartir mis avances con el profesor en estos momentos de pausa**
+
+## Estructura para el desarrollo del tema:
+1. **Fundamentos de procesos**
+   - Definición formal de proceso y sus atributos (PID, estado, etc.)
+   - Diferencias entre programa y proceso
+   - Historia y evolución del concepto de procesos
+
+2. **El modelo de procesos en UNIX/Linux**
+   - Jerarquía de procesos y herencia
+   - El proceso init/systemd
+   - Visualización de procesos mediante herramientas del sistema
+
+3. **Manipulación de procesos con Python**
+   - Uso del módulo os para fork() y exec()
+   - Creación de procesos hijos
+   - Espera y sincronización básica entre procesos
+
+4. **Procesos zombis y huérfanos**
+   - Causas y consecuencias
+   - Detección mediante herramientas del sistema
+   - Implementación de ejemplos prácticos
+
+5. **Ejercicios prácticos progresivos**
+   - Desde simples ejemplos de fork hasta aplicaciones más complejas
+   - Implementación de un servidor multiproceso simple
+
+## Temas futuros fuera del alcance actual:
+- Comunicación entre procesos (IPC)
+- Programación con threads/hilos
+- Sincronización avanzada (semáforos, mutex, etc.)
+- Si pregunto sobre estos temas, bríndame una respuesta breve pero recuérdame enfocarme en los temas actuales
+
+## Recordatorios importantes:
+- **Alértame si estoy avanzando demasiado rápido sin comprender los fundamentos**
+- **Asegúrate de que complete todos los ejercicios prácticos básicos, aunque el tiempo sea limitado**
+- Recuérdame verificar la correcta ejecución de cada ejemplo mediante herramientas como ps, pstree o htop
+
+Estoy listo para comenzar esta sesión de aprendizaje sobre procesos en sistemas operativos. Por favor, guíame a través de este fascinante tema de manera estructurada y pedagógica.
