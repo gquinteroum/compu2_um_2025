@@ -89,7 +89,7 @@ Cada flujo de datos está representado internamente por un número llamado **des
 
 ### **3.2 ¿Qué es un Descriptor de Archivo?**
 
-Un **descriptor de archivo** es un identificador numérico asignado por el kernel de Unix/Linux a cada archivo, proceso o dispositivo abierto en el sistema. Estos descriptores permiten la abstracción de la E/S y hacen posible el manejo uniforme de flujos de datos, ya sea desde el teclado, un archivo, un socket de red o un dispositivo físico.
+Un **descriptor de archivo** es un identificador numérico asignado por el kernel de Unix/Linux a cada archivo, dispositivo abierto en el sistema. Estos descriptores permiten la abstracción de la E/S y hacen posible el manejo uniforme de flujos de datos, ya sea desde el teclado, un archivo, un socket de red o un dispositivo físico.
 
 Cada proceso tiene su propia tabla de descriptores de archivo, y estos pueden ser manipulados mediante llamadas al sistema. Los descriptores más comunes son:
 
