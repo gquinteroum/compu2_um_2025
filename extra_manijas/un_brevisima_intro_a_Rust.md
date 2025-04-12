@@ -6,7 +6,7 @@ En el vasto universo de los lenguajes de programación, cada cierto tiempo emerg
 
 Nacido en los laboratorios de Mozilla y desarrollado con el apoyo de una comunidad vibrante y en constante crecimiento, **Rust** combina la cercanía al hardware propia de C y C++, con un sistema de tipos moderno y un enfoque radicalmente innovador en cuanto al manejo de la memoria. Es un lenguaje diseñado desde sus cimientos para prevenir errores comunes como desbordamientos de buffer, condiciones de carrera o referencias a memoria inválida — y lo hace sin la ayuda de un recolector de basura.
 
-Pero Rust no es solo un lenguaje para escribir software sin errores. Es también una herramienta que permite pensar mejor. Cada línea escrita en Rust invita a una mayor conciencia sobre cómo se estructura el código, cómo se distribuyen los recursos, y cómo se construye software verdaderamente confiable. Esta combinación de eficiencia y claridad lo ha posicionado como el lenguaje "más querido" según [la encuesta de Stack Overflow](https://insights.stackoverflow.com/survey/2023#technology-most-loved-dreaded-and-wanted-languages) por varios años consecutivos.
+Pero Rust no es solo un lenguaje para escribir software sin errores. Es también una herramienta que permite pensar mejor. Cada línea escrita en Rust invita a una mayor conciencia sobre cómo se estructura el código, cómo se distribuyen los recursos, y cómo se construye software verdaderamente confiable. Esta combinación de eficiencia y claridad lo ha posicionado como el lenguaje "más querido" según la encuesta de Stack Overflow por varios años consecutivos.
 
 ---
 
