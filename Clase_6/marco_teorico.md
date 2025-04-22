@@ -50,45 +50,213 @@ $ mkfifo /tmp/mi_fifo
 
 Este archivo especial puede ser abierto por múltiples procesos para escritura o lectura.
 
-### 5.2 Mecanismos de lectura y escritura
+### 5.2 Mecanismos de lectura y escritura (modo bajo nivel con `os`)
 
-Lectura y escritura se hacen como en archivos normales. Ejemplo en Python:
+La lectura y escritura en un FIFO puede realizarse no solo con la función `open()` de alto nivel en Python, sino también utilizando la librería `os`, que permite trabajar con descriptores de archivo y banderas POSIX de forma más cercana al sistema operativo. Esto es útil cuando se requiere control fino sobre bloqueo, apertura no bloqueante, o tratamiento explícito de errores.
+
+---
+
+### Ejemplo básico con `os.open`, `os.read`, `os.write`
+
+Antes de ejecutar estos scripts, crear el FIFO desde terminal:
+
+```bash
+mkfifo /tmp/mi_fifo
+```
+
+#### Escritura:
+```python
+# escribir_fifo_os.py
+import os
+import time
+
+fd = os.open('/tmp/mi_fifo', os.O_WRONLY)
+os.write(fd, b'Hola desde os.write\n')
+os.close(fd)
+```
+
+#### Lectura:
+```python
+# leer_fifo_os.py
+import os
+
+fd = os.open('/tmp/mi_fifo', os.O_RDONLY)
+data = os.read(fd, 1024)
+print('Lectura:', data.decode())
+os.close(fd)
+```
+
+---
+
+### Control de bloqueo con `O_NONBLOCK`
+
+Con `O_NONBLOCK`, es posible evitar que el proceso quede bloqueado si no hay otro extremo abierto todavía.
 
 ```python
-# escribir_fifo.py
-with open('/tmp/mi_fifo', 'w') as fifo:
-    fifo.write('Hola desde el escritor\n')
+# lector_no_block.py
+import os
+import errno
+import time
+
+try:
+    fd = os.open('/tmp/mi_fifo', os.O_RDONLY | os.O_NONBLOCK)
+    data = os.read(fd, 1024)
+    print('Leído:', data.decode() if data else '[sin datos]')
+    os.close(fd)
+except OSError as e:
+    if e.errno == errno.ENXIO:
+        print('No hay escritor disponible aún.')
+```
+
+---
+
+### Comportamiento del cursor y consumo de datos
+
+A diferencia de un archivo tradicional, en un FIFO **los datos se consumen en la lectura**. Esto significa que **no pueden ser leídos nuevamente por otro proceso**, aunque cada uno tenga su propio descriptor de archivo.
+
+Ejemplo:
+
+```bash
+mkfifo /tmp/fifo_cursor_os
 ```
 
 ```python
-# leer_fifo.py
-with open('/tmp/mi_fifo', 'r') as fifo:
-    print('Lectura:', fifo.readline())
-```
+# escribir_fifo_cursor_os.py
+import os
 
-Un aspecto fundamental de los FIFOs es que **la posición del cursor no es compartida entre procesos**. A diferencia de un archivo regular, cada proceso tiene su propio descriptor de archivo, y el kernel gestiona los accesos de forma secuencial.
-
-#### Ejemplo: Demostración de cursores independientes
-
-```python
-# escritor_cursor.py
-with open('/tmp/fifo_cursor', 'w') as fifo:
-    fifo.write('ABCDEF')
+fd = os.open('/tmp/fifo_cursor_os', os.O_WRONLY)
+os.write(fd, b'ABCDEF')
+os.close(fd)
 ```
 
 ```python
-# lector_cursor1.py
-with open('/tmp/fifo_cursor', 'r') as fifo:
-    print('Lector 1 lee:', fifo.read(3))
+# lector_1_os.py
+import os
+
+fd = os.open('/tmp/fifo_cursor_os', os.O_RDONLY)
+print('Lector 1 lee:', os.read(fd, 3).decode())  # ABC
+os.close(fd)
 ```
 
 ```python
-# lector_cursor2.py
-with open('/tmp/fifo_cursor', 'r') as fifo:
-    print('Lector 2 lee:', fifo.read(3))
+# lector_2_os.py
+import os
+
+fd = os.open('/tmp/fifo_cursor_os', os.O_RDONLY)
+print('Lector 2 lee:', os.read(fd, 3).decode())  # DEF o vacío si ya se consumió
+os.close(fd)
 ```
 
-Ambos lectores leen los mismos primeros tres caracteres: `ABC`. No hay avance de cursor compartido: cada apertura comienza desde el inicio de la cola si hay datos disponibles.
+> Como los datos ya fueron consumidos por el primer lector, el segundo proceso lee solo los restantes, o nada si el buffer ya se vació. Esto demuestra que en un FIFO los datos **no persisten** y el **acceso es secuencial y destructivo**.
+
+---
+
+Este modo de trabajo con `os` y descriptores de archivo es fundamental para aplicaciones que requieren operaciones sin bloqueo, multiplexado con `select()`, o integración con estructuras de bajo nivel del sistema operativo.
+
+### 5.2 Mecanismos de lectura y escritura (modo bajo nivel con `os`)
+
+La lectura y escritura en un FIFO puede realizarse no solo con la función `open()` de alto nivel en Python, sino también utilizando la librería `os`, que permite trabajar con descriptores de archivo y banderas POSIX de forma más cercana al sistema operativo. Esto es útil cuando se requiere control fino sobre bloqueo, apertura no bloqueante, o tratamiento explícito de errores.
+
+---
+
+### Ejemplo básico con `os.open`, `os.read`, `os.write`
+
+Antes de ejecutar estos scripts, crear el FIFO desde terminal:
+
+```bash
+mkfifo /tmp/mi_fifo
+```
+
+#### Escritura:
+```python
+# escribir_fifo_os.py
+import os
+import time
+
+fd = os.open('/tmp/mi_fifo', os.O_WRONLY)
+os.write(fd, b'Hola desde os.write\n')
+os.close(fd)
+```
+
+#### Lectura:
+```python
+# leer_fifo_os.py
+import os
+
+fd = os.open('/tmp/mi_fifo', os.O_RDONLY)
+data = os.read(fd, 1024)
+print('Lectura:', data.decode())
+os.close(fd)
+```
+
+---
+
+### Control de bloqueo con `O_NONBLOCK`
+
+Con `O_NONBLOCK`, es posible evitar que el proceso quede bloqueado si no hay otro extremo abierto todavía.
+
+```python
+# lector_no_block.py
+import os
+import errno
+import time
+
+try:
+    fd = os.open('/tmp/mi_fifo', os.O_RDONLY | os.O_NONBLOCK)
+    data = os.read(fd, 1024)
+    print('Leído:', data.decode() if data else '[sin datos]')
+    os.close(fd)
+except OSError as e:
+    if e.errno == errno.ENXIO:
+        print('No hay escritor disponible aún.')
+```
+
+---
+
+### Comportamiento del cursor y consumo de datos
+
+A diferencia de un archivo tradicional, en un FIFO **los datos se consumen en la lectura**. Esto significa que **no pueden ser leídos nuevamente por otro proceso**, aunque cada uno tenga su propio descriptor de archivo.
+
+Ejemplo:
+
+```bash
+mkfifo /tmp/fifo_cursor_os
+```
+
+```python
+# escribir_fifo_cursor_os.py
+import os
+
+fd = os.open('/tmp/fifo_cursor_os', os.O_WRONLY)
+os.write(fd, b'ABCDEF')
+os.close(fd)
+```
+
+```python
+# lector_1_os.py
+import os
+
+fd = os.open('/tmp/fifo_cursor_os', os.O_RDONLY)
+print('Lector 1 lee:', os.read(fd, 3).decode())  # ABC
+os.close(fd)
+```
+
+```python
+# lector_2_os.py
+import os
+
+fd = os.open('/tmp/fifo_cursor_os', os.O_RDONLY)
+print('Lector 2 lee:', os.read(fd, 3).decode())  # DEF o vacío si ya se consumió
+os.close(fd)
+```
+
+> Como los datos ya fueron consumidos por el primer lector, el segundo proceso lee solo los restantes, o nada si el buffer ya se vació. Esto demuestra que en un FIFO los datos **no persisten** y el **acceso es secuencial y destructivo**.
+
+---
+
+Este modo de trabajo con `os` y descriptores de archivo es fundamental para aplicaciones que requieren operaciones sin bloqueo, multiplexado con `select()`, o integración con estructuras de bajo nivel del sistema operativo.
+
+
 
 ### 5.3 Llamadas del sistema relacionadas
 
