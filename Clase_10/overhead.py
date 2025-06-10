@@ -3,7 +3,7 @@ from threading import Thread
 from multiprocessing import Process
 
 # Número de tareas concurrentes a lanzar
-N = 10
+N = 100
 
 def dummy_task():
     """Tarea mínima sin operación real, para medir solo el costo de coordinación."""

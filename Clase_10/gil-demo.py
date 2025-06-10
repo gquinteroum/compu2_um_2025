@@ -9,7 +9,7 @@ def fix_cpu(cpu_id):
     except AttributeError:
         pass  # No disponible en Windows o Mac
 
-def compute_atomic(name, count=500_000_000, cpu_id=None):
+def compute_atomic(name, count=500_000, cpu_id=None):
     if cpu_id is not None:
         fix_cpu(cpu_id)
 
